@@ -24,26 +24,21 @@ def send_to_all(all_assassins):
     if input("Are you sure you want to send a message to everyone?") != "yes":
         exit(1)
 
-    for assassin in all_assassins[:]:
+    for assassin in all_assassins:
         if assassin.dead == "yes" or assassin.has_new_target[:2] == "No":
             continue
-        message = "Well fought, " + assassin.name + ". Your next target is " + assassin.my_target + ". May your target die a fiery spoon death!"
+        message = ("Most excellent spooning, " + assassin.name + "! Your next target is " + assassin.my_target +
+                   ". May your spoon carve out other before you are scooped up by rival assasssins!")
 
-        #message = "Sorry, a few people have duplicate targets. Disregard your first target an know you will get a new target in a few minutes."
-
-        url = "http://smsgateway.me/api/v3/messages/send"
+        gateway = "http://192.168.1.154:8766/"
 
         print(message)
-        data = {
-        "email": "gabrielmukobi@gmail.com",
-        "password":	"a4beb3b8ec",
-        "device": 66226,
-        "number": assassin.number,
-        "message": message
-        }
 
-        print(data)
-        response = requests.post(url, data=data)
+        number = assassin.number
+
+        url = gateway + "?number=" + str(number) + "&message=" + message
+
+        response = requests.post(url)
 
         print(response.text)
 
