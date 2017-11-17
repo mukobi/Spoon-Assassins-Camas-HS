@@ -3,12 +3,15 @@ import random
 
 
 class Assassin:
-    def __init__(self, in_name, in_grade, in_number):
+    def __init__(self, in_name, in_dead, in_grade, in_section, in_number, in_my_target=None, in_targeted_by=None, in_has_new_targer="No"):
         self.name = in_name
         self.grade = in_grade
+        self.section = in_section
         self.number = in_number
-        self.my_target = None
-        self.targeted_by = None
+        self.dead = in_dead
+        self.my_target = in_my_target
+        self.targeted_by = in_targeted_by
+        self.has_new_target = in_has_new_targer
 
     def set_my_target(self, target):
         self.my_target = target
@@ -21,8 +24,10 @@ def send_to_all(all_assassins):
     if input("Are you sure you want to send a message to everyone?") != "yes":
         exit(1)
 
-    for assassin in all_assassins[90:]:
-        message = "Ok, " + assassin.name + ". Your actual first target is " + assassin.my_target + ". Good luck and godspeed!"
+    for assassin in all_assassins[:]:
+        if assassin.dead == "yes" or assassin.has_new_target[:2] == "No":
+            continue
+        message = "Well fought, " + assassin.name + ". Your next target is " + assassin.my_target + ". May your target die a fiery spoon death!"
 
         #message = "Sorry, a few people have duplicate targets. Disregard your first target an know you will get a new target in a few minutes."
 
@@ -84,9 +89,7 @@ if __name__ == "__main__":
         for line in doc.readlines():
             if line != "\n":
                 content = line.split(",")
-                assassin = Assassin(content[0], content[1], content[2])
-                assassin.set_my_target(content[3])
-                assassin.set_targeted_by(content[4])
+                assassin = Assassin(content[0], content[1], content[2], content[3], content[4], content[5], content[6], content[7])
                 all_assassins.append(assassin)
     print(all_assassins)
 
