@@ -25,10 +25,12 @@ def send_to_all(all_assassins):
         exit(1)
 
     for assassin in all_assassins:
-        if assassin.dead == "yes" or assassin.has_new_target[:2] == "No":
-            continue
-        message = ("Most excellent spooning, " + assassin.name + "! Your next target is " + assassin.my_target +
-                   ". May your spoon carve out other before you are scooped up by rival assasssins!")
+        # if assassin.dead == "yes" or assassin.has_new_target[:2] == "No":
+        #     continue
+        message = ("Be warned, " + assassin.name + "! Due to a drop in killings, everyone has new targets! If you " +
+                   "didn't kill your previous target, you will no longer be able to assassinate that person and will " +
+                   "get a new target instead. Your new target is " + assassin.my_target +
+                   ". Beware the silverware!")
 
         gateway = "http://192.168.1.154:8766/"
 
@@ -38,9 +40,9 @@ def send_to_all(all_assassins):
 
         url = gateway + "?number=" + str(number) + "&message=" + message
 
-        response = requests.post(url)
-
-        print(response.text)
+        # response = requests.post(url)
+        #
+        # print(response.text)
 
 
 def assign_targets(all_assassins):
@@ -73,9 +75,9 @@ def assign_targets(all_assassins):
 
     # with open("data/new_target_list.csv", "w") as doc:
     #     for assassin in all_assassins:
-    #         doc.write(assassin.name + "," + assassin.grade + "," + assassin.number + "," + assassin.my_target + "," + assassin.targeted_by + ",\n")
+    #         doc.write(assassin.name + ",No," + assassin.grade + "," + assassin.section + "," + assassin.number + "," + assassin.my_target + "," + assassin.targeted_by + ",\n")
 
-    # return all_assassins
+    return all_assassins
 
 
 if __name__ == "__main__":
@@ -84,11 +86,11 @@ if __name__ == "__main__":
         for line in doc.readlines():
             if line != "\n":
                 content = line.split(",")
-                assassin = Assassin(content[0], content[1], content[2], content[3], content[4], content[5], content[6], content[7])
+                assassin = Assassin(content[0], content[1], content[2], content[3], content[4], content[5], content[6])
                 all_assassins.append(assassin)
     print(all_assassins)
 
-    #all_assassins = assign_targets(all_assassins)
+    # assign_targets(all_assassins)
 
     send_to_all(all_assassins)
 
