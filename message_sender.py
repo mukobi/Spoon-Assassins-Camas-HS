@@ -25,12 +25,10 @@ def send_to_all(all_assassins):
         exit(1)
 
     for assassin in all_assassins:
-        # if assassin.dead == "yes" or assassin.has_new_target[:2] == "No":
-        #     continue
-        message = ("Be warned, " + assassin.name + "! Due to a drop in killings, everyone has new targets! If you " +
-                   "didn't kill your previous target, you will no longer be able to assassinate that person and will " +
-                   "get a new target instead. Your new target is " + assassin.my_target +
-                   ". Beware the silverware!")
+        if assassin.dead == "yes" or assassin.has_new_target[:2] == "No":
+            continue
+        message = ("A quick kill, " + assassin.name + "! Your new target is " + assassin.my_target +
+                   '. Reply "forte" if you received this message.')
 
         gateway = "http://192.168.1.154:8766/"
 
@@ -41,8 +39,6 @@ def send_to_all(all_assassins):
         url = gateway + "?number=" + str(number) + "&message=" + message
 
         # response = requests.post(url)
-        #
-        # print(response.text)
 
 
 def assign_targets(all_assassins):
@@ -86,7 +82,7 @@ if __name__ == "__main__":
         for line in doc.readlines():
             if line != "\n":
                 content = line.split(",")
-                assassin = Assassin(content[0], content[1], content[2], content[3], content[4], content[5], content[6])
+                assassin = Assassin(content[0], content[1], content[2], content[3], content[4], content[5], content[6], content[7])
                 all_assassins.append(assassin)
     print(all_assassins)
 
