@@ -27,8 +27,8 @@ def send_to_all(all_assassins):
     for assassin in all_assassins:
         if assassin.dead == "yes" or assassin.has_new_target[:2] == "No":
             continue
-        message = ("A quick kill, " + assassin.name + "! Your new target is " + assassin.my_target +
-                   '. Reply "forte" if you received this message.')
+        message = ("I hope your spoon is ready, " + assassin.name + "! Your next target is " + assassin.my_target +
+                   '. Reply "staccato" if you received this message.')
 
         gateway = "http://192.168.1.154:8766/"
 
@@ -38,7 +38,7 @@ def send_to_all(all_assassins):
 
         url = gateway + "?number=" + str(number) + "&message=" + message
 
-        # response = requests.post(url)
+        response = requests.post(url)
 
 
 def assign_targets(all_assassins):
