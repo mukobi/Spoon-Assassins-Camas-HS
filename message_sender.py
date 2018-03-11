@@ -1,17 +1,21 @@
 import requests
 import random
+import time
 
 
 class Assassin:
-    def __init__(self, in_name, in_dead, in_grade, in_section, in_number, in_my_target=None, in_targeted_by=None, in_has_new_targer="No"):
-        self.name = in_name
-        self.grade = in_grade
-        self.section = in_section
-        self.number = in_number
-        self.dead = in_dead
-        self.my_target = in_my_target
-        self.targeted_by = in_targeted_by
-        self.has_new_target = in_has_new_targer
+    def __init__(self, content):
+        self.name = content[0]
+        self.status = content[1]
+        self.round_of_status = content[2]
+        self.grade = content[3]
+        self.section = content[4]
+        self.number = content[5]
+        self.my_target = content[6]
+        self.targeted_by = content[7]
+        self.has_new_target = content[8]
+        self.has_new_target = content[9]
+        self.error = content[10]
 
     def set_my_target(self, target):
         self.my_target = target
@@ -22,58 +26,33 @@ class Assassin:
 
 def send_to_all(all_assassins):
     if input("Are you sure you want to send a message to everyone?") != "yes":
+        print("Exiting")
         exit(1)
-
     for assassin in all_assassins:
-        if assassin.dead == "yes" or assassin.has_new_target[:2] == "No":
+        if assassin.status == "Dead" or "Yes" not in assassin.error:
             continue
-        message = ("I hope your spoon is ready, " + assassin.name + "! Your next target is " + assassin.my_target +
-                   '. Reply "staccato" if you received this message.')
+        section = assassin.section
+        if section == '':
+            section = "Oops, you never wrote down a section!"
+        message = ("Hello, and thank you for registering for Spoon Assassins. " 
+                   + "You signed up with the following:\n"
+                   + "Name: " + assassin.name + "\n"
+                   + "Grade: " + assassin.grade + "\n"
+                   + "Section: " + assassin.section + "\n"
+                   + "If any of that is incorrect, reply with the correction. Otherwise, reply 'vivace'")
+
+        encoded_message = requests.utils.quote(message, safe='')
 
         gateway = "http://192.168.1.154:8766/"
 
-        print(message)
-
         number = assassin.number
 
-        url = gateway + "?number=" + str(number) + "&message=" + message
+        url = gateway + "?number=" + str(number) + "&message=" + encoded_message
 
-        response = requests.post(url)
+        response = requests.get(url)
+        print(response)
 
-
-def assign_targets(all_assassins):
-    for assassin in all_assassins:
-        target_num = random.randint(0, len(all_assassins) - 1)
-        while True:
-            x = all_assassins[target_num].name
-            target_num = random.randint(0, len(all_assassins) - 1)
-            if(all_assassins[target_num].name != assassin.name
-              and all_assassins[target_num].my_target != assassin.name
-              and all_assassins[target_num].targeted_by is None):
-                break
-
-        all_assassins[target_num].set_targeted_by(assassin.name)
-        assassin.set_my_target(all_assassins[target_num].name)
-
-    target_list = []
-    for assassin in all_assassins:
-        #print(assassin.my_target)
-        target_list.append(assassin.my_target)
-        print(assassin.name + " is targeting " + assassin.my_target + " and targeted by " + assassin.targeted_by)
-
-    target_list = sorted(target_list)
-    print("\n\n\n")
-    print(len(target_list))
-    print(len(all_assassins))
-    print("\n\n")
-    for name in target_list:
-        print(name)
-
-    # with open("data/new_target_list.csv", "w") as doc:
-    #     for assassin in all_assassins:
-    #         doc.write(assassin.name + ",No," + assassin.grade + "," + assassin.section + "," + assassin.number + "," + assassin.my_target + "," + assassin.targeted_by + ",\n")
-
-    return all_assassins
+        time.sleep(1)
 
 
 if __name__ == "__main__":
@@ -82,10 +61,8 @@ if __name__ == "__main__":
         for line in doc.readlines():
             if line != "\n":
                 content = line.split(",")
-                assassin = Assassin(content[0], content[1], content[2], content[3], content[4], content[5], content[6], content[7])
+                assassin = Assassin(content)
                 all_assassins.append(assassin)
-    print(all_assassins)
-
     # assign_targets(all_assassins)
 
     send_to_all(all_assassins)

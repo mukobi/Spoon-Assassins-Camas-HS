@@ -1,26 +1,89 @@
-Aidan Rice,No,12,Trombone,3605133456,Ethan Hansen,Laura Langdale,No
-Ally Butzke,No,12,Clarinet,2533556499,Tionni Trieu,Daniel Cambizaca,No
-Aries Zhang,No,9,Drums,6509675026,Haydn Hahn,Eve Wright,No
-Aubrey Pugmire,No,12,Flute,3609771497,Mark Harimoto,Brienna Watson,No
-Becca Knight,No,10,Trombone,3609770984,Joe Scordino,Chris Kling,Yes
-Brienna Watson,No,12,Drums,4692076470,Aubrey Pugmire,Cooper Converse,No
-Caleb Matta,No,9,Trombone,3603427263,Jackson Lyne,Tionni Trieu,No
-Chris Kling,No,10,Trumpet,9195183035,Becca Knight,James Kling,No
-Cooper Converse,No,12,Drums,3605535222,Brienna Watson,Ursula Hood,No
-Daniel Cambizaca,No,12,Trumpet,9712823759,Ally Butzke,Daniel Wagner,No
-Daniel Wagner,No,11,Drums,3608367800,Daniel Cambizaca,Jacob Gagnon,No
-Emalee Landers,No,11,Flute,3606749457,James Kling,Jakob Amundson,No
-Ethan Hansen,No,11,Drums,3607878525,Eve Wright,Aidan Rice,No
-Eve Wright,No,12,Trombone,3608397446,Aries Zhang,Ethan Hansen,No
-Haydn Hahn,No,9,Horn,9018712541,Laura Langdale,Aries Zhang,No
-Jackson Lyne,No,11,Drums,3606017067,Jordan Chase,Caleb Matta,No
-Jacob Gagnon,No,11,Saxophones,3603357557,Daniel Wagner,Mark Harimoto,Yes
-Jakob Amundson,No,11,Trombones,3609217755,Emalee Landers,Tate Fielding,Yes
-James Kling,No,10,Trumpet,9195186563,Chris Kling,Emalee Landers,Yes
-Joe Scordino,No,9,Drums,3608308961,Ursula Hood,Becca Knight,No
-Jordan Chase,No,10,Trumpet,3602166444,Tate Fielding,Jackson Lyne,Yes
-Laura Langdale,No,11,Clarinet,3609071516,Aidan Rice,Haydn Hahn,No
-Mark Harimoto,No,9,Drums,8089370010,Jacob Gagnon,Aubrey Pugmire,Yes
-Tate Fielding,No,9,Clarinet,3609520266,Jakob Amundson,Jordan Chase,Yes
-Tionni Trieu,No,11,Trumpet,5039439083,Caleb Matta,Ally Butzke,No
-Ursula Hood,No,12,Drums,3609773446,Cooper Converse,Joe Scordino,No
+Name,Status,Round of Status,Grade,Section,Number,Target,Targeted By,Has New Target,Targetted by New Person,Text Error,Num
+Aiden Staffatt,Alive,0,9,Clarinet,3607686416,,,Yes,Yes,,27
+Aiden Wood,Alive,0,9,,3603106115,,,Yes,Yes,,23
+Aldin Matta,Alive,0,9,Trumpet,3603427262,,,Yes,Yes,,65
+Ali Burris,Alive,0,9,Clarinet,3609759943,,,Yes,Yes,,44
+Anna Brown,Alive,0,12,Trumpet,3609498113,,,Yes,Yes,,73
+Ares Zhang,Alive,0,9,,6509675026,,,Yes,Yes,,22
+Aria Perry,Alive,0,9,Percussion,3603341218,,,Yes,Yes,,30
+Aspen Ashcraft,Alive,0,10,Trumpet,3603355042,,,Yes,Yes,,50
+Aubrey Pugmire,Alive,0,12,Flute,3609771497,,,Yes,Yes,,88
+Austin Ye,Alive,0,9,Clarinet,3609018062,,,Yes,Yes,,8
+Ava Lathim,Alive,0,10,Horn,3609090876,,,Yes,Yes,,74
+Becca Hart,Alive,0,10,Clarinet,3607841481,,,Yes,Yes,,42
+Becca Knight,Alive,0,10,Trombone,3609770984,,,Yes,Yes,Yes,41
+Bella Krohnert,Alive,0,10,Flute,3606099876,,,Yes,Yes,,25
+Ben Puffer,Alive,0,12,Clarinet,3602169912,,,Yes,Yes,,78
+Brienna Watson,Alive,0,,Percussion,4692076470,,,Yes,Yes,,11
+Bryson Colson,Alive,0,10,Percussion,3605131501,,,Yes,Yes,,53
+Caleb Matta,Alive,0,9,Trombone,3603427263,,,Yes,Yes,,66
+Cameron Hatton,Alive,0,12,,3607982368,,,Yes,Yes,,68
+Chris Kling,Alive,0,10,Low Brass,9195183035,,,Yes,Yes,,4
+Cole Childers,Alive,0,11,Low Brass,3607878226,,,Yes,Yes,,49
+Daniel Cambizaca,Alive,0,12,,9712823759,,,Yes,Yes,,16
+Daniel Wagner,Alive,0,11,Percussion,3608367800,,,Yes,Yes,,32
+Elizabeth Nilles,Alive,0,10,Flute,3607736550,,,Yes,Yes,,10
+Emalee Landers,Alive,0,11,Flute,3606749457,,,Yes,Yes,,6
+Evan Lipsky,Alive,0,9,Percussion,3605131252,,,Yes,Yes,,28
+Eve Wright,Alive,0,12,Trombone,3608397446,,,Yes,Yes,,39
+Grant Olsen,Alive,0,11,Saxophone,3607180110,,,Yes,Yes,,67
+Hanna Peterson,Alive,0,11,Saxophone,3603357805,,,Yes,Yes,,56
+Hannah Boone,Alive,0,9,,3602766434,,,Yes,Yes,,19
+Ian Brown,Alive,0,9,,3605189546,,,Yes,Yes,,45
+Ingrid Larsen,Alive,0,9,Percussion,2067994687,,,Yes,Yes,,69
+Jacob Mukobi,Alive,0,10,Saxophone,3604407271,,,Yes,Yes,,59
+Jake Carter,Alive,0,11,Saxophone,3606096152,,,Yes,Yes,,82
+Jakob Amundson,Alive,0,11,Trombone,3609217755,,,Yes,Yes,,47
+James Kling,Alive,0,10,Trumpet,9195186563,,,Yes,Yes,,1
+Jasmine Zhang,Alive,0,11,Flute,3609010724,,,Yes,Yes,,7
+Jason Liu,Alive,0,11,Clarinet,3608236071,,,Yes,Yes,,24
+Jason Reng,Alive,0,10,Horn,8019536207,,,Yes,Yes,,34
+Jason Reng,Alive,0,10,Horn,8019536207,,,Yes,Yes,,71
+Jennifer Nelson,Alive,0,11,Flute,3608181242,,,Yes,Yes,,5
+Jillian Johnson,Alive,0,12,Drums,3606014273,,,Yes,Yes,,84
+Joe Scordino,Alive,0,9,Percussion,3608308961,,,Yes,Yes,,37
+John Stevenson,Alive,0,12,Saxophone,3603355002,,,Yes,Yes,,83
+Johnny Bautista,Alive,0,11,Clarinet,3609019375,,,Yes,Yes,,86
+Jonah Castruccio,Alive,0,10,Clarinet,3606065258,,,Yes,Yes,,40
+Jonathan Lightfoot,Alive,0,9,Horn,3603561694,,,Yes,Yes,,26
+Jordan Chase,Alive,0,10,Trumpet,3602166444,,,Yes,Yes,,46
+Josh Randolph,Alive,0,12,Trumpet,3609474385,,,Yes,Yes,,81
+Kaya Gualtney,Alive,0,9,Low Brass,7707098337,,,Yes,Yes,,20
+Kellen Mason,Alive,0,9,Trumpet,3603355013,,,Yes,Yes,,64
+Laura Burton,Alive,0,9,Flute,3609478706,,,Yes,Yes,,21
+Laura Langdale,Alive,0,11,Clarinet,3609071416,,,Yes,Yes,,43
+Levi Buzan,Alive,0,10,Trumpet,3606069453,,,Yes,Yes,,9
+Logan Feeder,Alive,0,12,Saxophone,3607981113,,,Yes,Yes,,79
+Madeline Moore,Alive,0,10,,9402319093,,,Yes,Yes,,61
+Mady Ogle,Alive,0,9,Flute,3606271219,,,Yes,Yes,,17
+Maegan Randolph,Alive,0,10,Saxophone,3605538450,,,Yes,Yes,,12
+Malcolm Harker,Alive,0,9,,3602169598,,,Yes,Yes,,38
+Maren Rochelle,Alive,0,11,Clarinet,3609313955,,,Yes,Yes,,14
+Mark Harimoto,Alive,0,9,,8089370010,,,Yes,Yes,,62
+Mason Richardson,Alive,0,11,Clarinet,3604099354,,,Yes,Yes,,85
+Matthew Gonzalez,Alive,0,9,,9717085280,,,Yes,Yes,,77
+Megan Amundson,Alive,0,10,Saxophone,3607718043,,,Yes,Yes,,48
+Merissa Landers,Alive,0,11,Saxophone,3606749456,,,Yes,Yes,,15
+Michael Kang,Alive,0,12,Trombone,3608691527,,,Yes,Yes,,87
+Mila Smook,Alive,0,9,,3603427307,,,Yes,Yes,,54
+Miles Cottrell,Alive,0,11,Trombone,3606744804,,,Yes,Yes,,3
+Milhaila Forrester,Alive,0,11,Clarinet,3609801772,,,Yes,Yes,,29
+Nadezhda Yunchyk,Alive,0,9,Flute,6125981163,,,Yes,Yes,,31
+Nathen Reng,Alive,0,9,Flute,8019536207,,,Yes,Yes,,33
+Nichole Reng,Alive,0,12,Flute,6174294688,,,Yes,Yes,,35
+Nicki Wasson,Alive,0,9,Flute,3607840656,,,Yes,Yes,,36
+Nicole Nguyen,Alive,0,11,,3607268016,,,Yes,Yes,,51
+Rebekah Shellman,Alive,0,9,Flute,3603145485,,,Yes,Yes,,58
+Rose McClone,Alive,0,9,Flute,3606122239,,,Yes,Yes,,57
+Sam McCormick,Alive,0,10,Flute,2067292665,,,Yes,Yes,,80
+Sierra Mellor,Alive,0,10,Saxophone,3604093870,,,Yes,Yes,,75
+Stephen Snell,Alive,0,10,Trumpet,3602163315,,,Yes,Yes,,60
+Tate Fielding,Alive,0,9,,3609520266,,,Yes,Yes,Yes,55
+Tate Perry,Alive,0,11,Trombone,3608238766,,,Yes,Yes,,2
+Tate Perry,Alive,0,11,Trombone,3608238766,,,Yes,Yes,,70
+Tionni Trieu,Alive,0,11,Trumpet,3605218643,,,Yes,Yes,,52
+Trent Danielson,Alive,0,11,,3603357313,,,Yes,Yes,,18
+Ursula Hood,Alive,0,12,Percussion,3609773446,,,Yes,Yes,,13
+Wyatt Johnson,Alive,0,11,Horn,3603357618,,,Yes,Yes,,76
+Yvonne Lee,Alive,0,9,Clarinet,3605623201,,,Yes,Yes,,72
+Zach Shaw,Alive,0,10,,3604093426,,,Yes,Yes,,63
