@@ -6,16 +6,14 @@ import time
 class Assassin:
     def __init__(self, content):
         self.name = content[0]
-        self.status = content[1]
-        self.round_of_status = content[2]
-        self.grade = content[3]
-        self.section = content[4]
-        self.number = content[5]
-        self.my_target = content[6]
-        self.targeted_by = content[7]
-        self.has_new_target = content[8]
-        self.has_new_target = content[9]
-        self.error = content[10]
+        self.my_target = content[1]
+        self.status = content[2]
+        self.round_of_status = content[3]
+        self.grade = content[4]
+        self.section = content[5]
+        self.number = content[6]
+        self.has_new_target = content[7]
+        self.error = content[8]
 
     def set_my_target(self, target):
         self.my_target = target
@@ -28,18 +26,14 @@ def send_to_all(all_assassins):
     if input("Are you sure you want to send a message to everyone?") != "yes":
         print("Exiting")
         exit(1)
-    for assassin in all_assassins:
-        if assassin.status == "Dead" or "Yes" not in assassin.error:
+    for assassin in all_assassins[74:]:
+        if False:
             continue
         section = assassin.section
         if section == '':
             section = "Oops, you never wrote down a section!"
-        message = ("Hello, and thank you for registering for Spoon Assassins. " 
-                   + "You signed up with the following:\n"
-                   + "Name: " + assassin.name + "\n"
-                   + "Grade: " + assassin.grade + "\n"
-                   + "Section: " + assassin.section + "\n"
-                   + "If any of that is incorrect, reply with the correction. Otherwise, reply 'vivace'")
+        message = (assassin.name + ", be prepared! Your target is " + assassin.my_target
+                   + ". Confirm by replying 'subito'")
 
         encoded_message = requests.utils.quote(message, safe='')
 
@@ -50,9 +44,10 @@ def send_to_all(all_assassins):
         url = gateway + "?number=" + str(number) + "&message=" + encoded_message
 
         response = requests.get(url)
+        print(assassin.name + ":")
         print(response)
 
-        time.sleep(1)
+        time.sleep(10)
 
 
 if __name__ == "__main__":
