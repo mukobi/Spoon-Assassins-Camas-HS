@@ -27,18 +27,18 @@ def send_to_all(all_assassins):
     if input("Are you sure you want to send a message to everyone?") != "yes":
         print("Exiting")
         exit(1)
-    for assassin in all_assassins:
+    for assassin in all_assassins[10:]:
         if "Yes" not in assassin.has_new_target or "Alive" not in assassin.status:
             continue
         section = assassin.section
         if section == '':
             section = "Oops, you never wrote down a section!"
         message = (assassin.name + ", your new target target is " + assassin.my_target
-                   + ". Confirm you got this message by replying 'sforzando'")
+                   + ". Confirm you got this message by replying 'mezzo piano'")
 
         encoded_message = requests.utils.quote(message, safe='')
 
-        gateway = "http://172.31.18.248:8766/"
+        gateway = "http://192.168.1.154:8766/"
 
         number = assassin.number
 
@@ -48,7 +48,7 @@ def send_to_all(all_assassins):
         print(assassin.name + ":")
         print(response)
 
-        time.sleep(10)
+        time.sleep(5)
 
 
 if __name__ == "__main__":
