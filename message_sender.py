@@ -27,14 +27,12 @@ def send_to_all(all_assassins):
     if input("Are you sure you want to send a message to everyone?") != "yes":
         print("Exiting")
         exit(1)
-    for assassin in all_assassins[10:]:
+    for assassin in all_assassins[8:]:
         if "Yes" not in assassin.has_new_target or "Alive" not in assassin.status:
             continue
-        section = assassin.section
-        if section == '':
-            section = "Oops, you never wrote down a section!"
+
         message = (assassin.name + ", your new target target is " + assassin.my_target
-                   + ". Confirm you got this message by replying 'mezzo piano'")
+                   + ". Confirm you got this message by replying 'crescendo'")
 
         encoded_message = requests.utils.quote(message, safe='')
 
