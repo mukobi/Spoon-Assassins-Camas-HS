@@ -7,14 +7,13 @@ class Assassin:
     def __init__(self, content):
         self.name = content[0]
         self.my_target = content[1]
-        self.targeted_by = content[2]
-        self.status = content[3]
-        self.round_of_status = content[4]
-        self.grade = content[5]
-        self.section = content[6]
-        self.number = content[7]
-        self.has_new_target = content[8]
-        self.error = content[9]
+        self.status = content[2]
+        self.round_of_status = content[3]
+        self.grade = content[4]
+        self.section = content[5]
+        self.number = content[6]
+        self.has_new_target = content[7]
+        self.error = content[8]
 
     def set_my_target(self, target):
         self.my_target = target
@@ -27,12 +26,12 @@ def send_to_all(all_assassins):
     if input("Are you sure you want to send a message to everyone?") != "yes":
         print("Exiting")
         exit(1)
-    for assassin in all_assassins[8:]:
+    for assassin in all_assassins[:]:
         if "Yes" not in assassin.has_new_target or "Alive" not in assassin.status:
             continue
 
-        message = (assassin.name + ", your new target target is " + assassin.my_target
-                   + ". Confirm you got this message by replying 'crescendo'")
+        message = ("Be wary, " + assassin.name + " EVERYONE has a NEW target! Yours is " + assassin.my_target
+                   + ". Confirm you got this message by replying 'pizzicato'")
 
         encoded_message = requests.utils.quote(message, safe='')
 
@@ -57,7 +56,6 @@ if __name__ == "__main__":
                 content = line.split(",")
                 assassin = Assassin(content)
                 all_assassins.append(assassin)
-    # assign_targets(all_assassins)
 
     send_to_all(all_assassins)
 
