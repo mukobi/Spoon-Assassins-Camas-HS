@@ -6,14 +6,15 @@ import time
 class Assassin:
     def __init__(self, content):
         self.name = content[0]
-        self.my_target = content[1]
-        self.status = content[2]
-        self.round_of_status = content[3]
-        self.grade = content[4]
-        self.section = content[5]
-        self.number = content[6]
-        self.has_new_target = content[7]
-        self.error = content[8]
+        self.my_target_1 = content[1]
+        self.my_target_2 = content[2]
+        self.status = content[3]
+        self.round_of_status = content[4]
+        self.grade = content[5]
+        self.section = content[6]
+        self.number = content[7]
+        self.has_new_target = content[8]
+        self.error = content[9]
 
     def set_my_target(self, target):
         self.my_target = target
@@ -30,8 +31,9 @@ def send_to_all(all_assassins):
         if "Yes" not in assassin.has_new_target or "Alive" not in assassin.status:
             continue
 
-        message = ("Be wary, " + assassin.name + " EVERYONE has a NEW target! Yours is " + assassin.my_target
-                   + ". Confirm you got this message by replying 'pizzicato'")
+        message = ("Attention, " + assassin.name + "! Everyone has 2 targets, and is targeted by 2! Your targets are " 
+                   + assassin.my_target_1 + " and " + assassin.my_target_2
+                   + ". Confirm you got this message by replying 'agitado'")
 
         encoded_message = requests.utils.quote(message, safe='')
 
@@ -45,7 +47,7 @@ def send_to_all(all_assassins):
         print(assassin.name + ":")
         print(response)
 
-        time.sleep(5)
+        time.sleep(0.5)
 
 
 if __name__ == "__main__":
